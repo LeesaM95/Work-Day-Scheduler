@@ -3,15 +3,23 @@
 // in the html.
 
 // VARIABLES //
-
 var saveBtn = $(".saveBtn");
 var currentDay = $('#currentDay');
+var saveValues = JSON.parse(localStorage.getItem('UserInput')) || [];
+var timeBlock = $('.timeBlock');
+var userInput = {
+  blockId: $(this).parent().attr("id"),
+  text: $(this).parent().find(".description").val(),
+
+};
+
 
 // WHEN I open the planner
 function setColor() {
   var currentTime = dayjs();
   const formattedTime = currentTime.format('MM-DD-YYYY HH:mm:ss A');
-// THEN the current day is displayed at the top of the calendar
+
+  // THEN the current day is displayed at the top of the calendar
   $('#currentDay').text(formattedTime);
 
   $(".time-block").each(function () {
@@ -28,33 +36,33 @@ function setColor() {
   });
 };
 setColor();
+
 // add a set interval so the program knows to run second by second
-setInterval(setColor, 1000); 
+setInterval(setColor, 1000);
 
-
-// add a function that allows user to submit new event on time block. 
 // WHEN I click the save button for that timeblock
-// THEN the text for that event is saved in local storage
-  // what local storage is going to save upon clicking 'save'
-  // needs to save time and description into local storage
- $('.saveBtn').on('click', function(event) {
-event.preventDefault();
-alert('saved!');
+$('.saveBtn').on('click', function (event) {
+  event.preventDefault();
+  saveValues.push(timeBlock);
+  localStorage.setItem('UserInput', JSON.stringify(saveValues));
+  addPlan(timeBlock);
+  timeBlock = ' ';
+  
+  
+});
 
-var userInput= {
- saveBtnVal: $('.saveBtn').val(),
- UserSubmit: $('.description').val(),
-}
+saveValues.forEach(addPlan);
+function addPlan(text) {
+  const p = document.createElement('p')
+  p.textContent = text;
+  timeBlock.append(p);
+};
 
-localStorage.setItem('UserSubmit', JSON.stringify(userInput));
-console.log(localStorage.setItem('UserSubmit', JSON.stringify(userInput)))
-})
- 
- 
+addPlan();
+
 // for loop to get saved items out of local storage 
-// for (var i = 0; i <= 23; i++) {
 
-// }
+
 
 
 
