@@ -62,6 +62,18 @@ addPlan();
 
 // for loop to get saved items out of local storage 
 
+function pullSchedule() {
+  for(i = 0; i < timeBlock.length; i++) {
+    timeBlock[i].value = saveValues;
+  };
+  if (saveValues === false) {
+    addPlan();
+  } else {
+    return pullSchedule();
+  }
+};
+
+
 
 
 
