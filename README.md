@@ -6,7 +6,11 @@ Work Day Scheduler allows users to add items to a time block between 12am and 11
 
 ## Visuals
 GIF of Website:
+
+
 ![Moving Image of Scheduling Website](/Assets/media/work-scheduler-vid-ezgif.com-crop.gif)
+
+
 Website Link:
 https://leesam95.github.io/Work-Day-Scheduler/
 
