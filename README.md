@@ -5,7 +5,10 @@ Work Day Scheduler allows users to add items to a time block between 12am and 11
 
 
 ## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+GIF of Website:
+![Moving Image of Scheduling Website](/Assets/media/work-scheduler-vid-ezgif.com-crop.gif)
+Website Link:
+https://leesam95.github.io/Work-Day-Scheduler/
 
 ## Installation
 This application does not require any downloading whatsoever to run. A user will simply click on the time block, enter some text, and hit the save button. The application should reset every day to create a new, clean sheet to plan. 
